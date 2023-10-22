@@ -1,10 +1,17 @@
+# Associate a unique 3 word name with every location on the surface.  This is
+# just an idea I was experimenting with after hearing about what3words.com.  It
+# works by using a large table of words and then generating permuations from
+# those words to map coordinates to unique names and back, see below for
+# details. Words are sourced from the ispell word list source code distritution which
+# is GPL.  Other than that use this as you wish.
+
 from itertools import islice
 from itertools import permutations
 from math import log10
 import time
 
-# precision of coordinates in meters
-PRECISION = 1.0 * 10**1
+# set the precision of coordinates in meters
+PRECISION = 1.0 * 10**2
 
 # length of one degree of latitude or longitude at the equator in meters.
 LENGTH_OF_ONE_DEGREE = 111.32 * 10**3
